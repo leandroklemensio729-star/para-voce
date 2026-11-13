@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Para meu reizinho ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #4a001f, #a00046, #ed6a91);
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 430px;
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+.coracao {
+    font-size: 65px;
+    animation: bater 1s infinite;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffe0eb;
+}
+
+.mensagem {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.destaque {
+    color: #ffd1df;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    background: #fff0f5;
+    color: #a00046;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: white;
+}
+
+.rodape {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #ffe0eb;
+}
+
+.flutuante {
+    position: absolute;
+    bottom: -30px;
+    color: rgba(255,255,255,0.6);
+    animation: subir linear infinite;
+    z-index: 1;
+}
+
+@keyframes bater {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes subir {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="coracao">❤️</div>
+
+    <h1>Para você, meu amor!</h1>
+
+    <p class="mensagem">
+        Eu só queria encontrar uma maneira
+        especial de te lembrar o quanto você
+        é importante para mim.
+        <br><br>
+
+        <span class="destaque">
+            Eu te amo muito, meu reizinho! ❤️
+        </span>
+
+        <br><br>
+
+        Você é uma das partes mais bonitas
+        da minha vida.
+    </p>
+
+    <button onclick="tocarMusica()">
+        🎵 Ouvir nossa música
+    </button>
+
+    <div class="rodape">
+        Feito com muito amor pelo seu pricipe.
+        ❤️
+    </div>
+
+</div>
+
+<script>
+
+// Corações flutuando pela tela
+function criarCoracao() {
+    const coracao = document.createElement("div");
+
+    coracao.classList.add("flutuante");
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = (15 + Math.random() * 25) + "px";
+    coracao.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 9000);
+}
+
+setInterval(criarCoracao, 400);
+
+// Abrir a música no YouTube
+function tocarMusica() {
+    window.open(
+        "https://www.youtube.com/results?search_query=Priscila+Senna+Te+Amar",
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
